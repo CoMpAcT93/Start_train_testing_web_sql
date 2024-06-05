@@ -1,0 +1,46 @@
+Комментарий в SQL – это (--), многострочные – это (/* и заканчивается */)
+Запрос SELECT в SQL
+SELECT
+	*
+FROM
+	albums;
+
+==============================================================================
+Первые запросы SQL
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	FirstName,
+	LastName,
+	Email,
+	Company,
+	Phone
+FROM
+	customers;
+	
+=================================================================
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	LastName AS [LastName],
+	FirstName AS 'B',
+	Email AS EMAIL,
+	Company AS 'Wolrd Company',
+	Phone CELL
+FROM
+	customers
+ORDER BY
+	Email ASC --сортировка АБВ // обратная DESC
+--LIMIT 10 //выводит 10 записей
+
+====================================================================
