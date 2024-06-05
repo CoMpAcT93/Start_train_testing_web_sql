@@ -1,0 +1,53 @@
+Книжки для чтива:
+книги которые нужны сейчас:
+* принципы unit-тестирования (владимир Хориков)
+* тестирование ВЕБ-API (Марк Винтерингем)
+* тестирование Javascript (Лукас да Коста)
+
+
+• «Требования для программного обеспечения: рекомендации по сбору и докумен-
+тированию» (Илья Корнипаев).
+• «Business Analysis Techniques. 72 Essential Tools for Success» (James Cadle, Debra Paul,
+Paul Turner).
+• «Business Analysis (Second Edition)» (Debra Paul, Donald Yeates, James Cadle).
+• Карла Вигерса «Разработка требований к программному обеспечению» («Soft ware Requirements
+(3rd Edition) (Developer Best Practices)», Karl Wiegers, Joy Beatty).
+• Джеймса Баха «Что такое исследовательское тестирование?
+
+• Бориса Бейзера «Техники тестирования ПО»
+(«Soft ware Testing Techniques, Second Edition», Boris Beizer)
+• Сэма Канера «An Introduction to Scenario Testing - сценарное тестироваине
+
+======= Автоматизатор ============
+Непосредственно по языкам программирования рекомендую книги
+серии Head First O'Really:
+•  Кэти Сьерра и Берт Бейнс: «Изучаем Java>>.
+•  Эрик Фримен, Элизабет Робсон: «Изучаем программирование на JavaScript>>.
+Скотт Граннеман: <<Linux. Карманный справочнию>.
+• Бен Форта: <<Регулярные выражения. 10 минут на урою> - без них
+бывает сложно.
+• << Version Control Ьу Example>> - сравнение SVN, Mercurial и Git на одних и тех же примерах, очень доходчиво! Но на английском ...
+И еще полезные:
+• Дэн Пилон, Расе Майлз: <<Управление разработкой ПО» - в целом
+• процессах.
+• Эрик и Элизабет Фримен: <<Изучаем HTML, XHTML и CSS>> - для
+автоматизации веба HTML надо знать.
+
+==================================
+
+
+
+Книжки по оценке трудозатрат:
+• «Th e Mythical Man Month», Frederick Brooks.
+• «Controlling Soft ware Projects», Tom De Marco.
+• «Soft ware engineering metrics and models», Samuel Conte.
+«Essential Scrum», Kenneth Rubin.
+• «Agile Estimating and Planning», Mike Cohn.
+• «Extreme programming explained: Embrace change», Kent Beck.
+• PMBOK («Project Management Body of Knowledge»).
+• Краткий перечень основных техник с пояснениями можно посмотреть в статье
+«Soft ware Estimation Techniques — Common Test Estimation Techniques used in
+SDLC345».
+
+Читаю: 
+• Ли Коупленд "Практическое руководство по разработке тестов"
