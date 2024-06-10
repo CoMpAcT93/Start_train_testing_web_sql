@@ -44,3 +44,143 @@ ORDER BY
 --LIMIT 10 //выводит 10 записей
 
 ====================================================================
+	Логические операторы
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	Total AS [Original Amount],
+	Total + 3.879 AS 'Итоговая сумма с 15% налога',
+	Total + 10 AS [Additon Operator],
+	Total - 10 AS [Subtraction Operator],
+	Total / 10 AS [DIvision Operator],
+	Total * 10 AS [Multiplication Operator],
+	Total % 10 AS [Modulo Operator],
+	Total * 15 / 100 AS '15% от суммы'
+FROM
+	invoices
+ORDER BY
+	Total DESC
+	
+=====================================================================
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,ы
+	Total
+FROM
+	invoices
+WHERE
+	Total != 1.98
+ORDER BY
+	InvoiceDate
+	
+=======================================================================
+BETWEEN AND
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+	
+FROM
+	invoices
+WHERE
+	Total BETWEEN 1.98 AND 5.00 -- можно использовать пример: Total >= 1.98 
+ORDER BY
+	InvoiceDate
+	
+===============================================================================
+IN
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+	
+FROM
+	invoices
+WHERE
+	Total IN (13.86, 18.86, 21.86)
+ORDER BY
+	--InvoiceDate
+	Total ASC
+====================================================================================
+Поиск городов
+/*
+CREATED BY: Andrey Bernem
+CREATED ON: 05.06.2024
+DESCRIPTION: Вопрос первый (тестовый)
+данный запрос осуществляет выборку полей, имен, фамилии, электронной почты
+из таблицы customers (клиентов)
+*/
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total
+	
+FROM
+	invoices
+WHERE	
+	  BillingCity IN ('Tucson', 'Paris', 'London')
+          BillingCity LIKE 'P%' AND Total > 2.00
+	--BillingCity = 'Tucson'
+	--Total IN (13.86, 18.86, 21.86)
+ORDER BY
+	--InvoiceDate
+	Total
+	
+====================================================================================
+WHERE	
+
+	  DATE(InvoiceDate) = '2009-01-03'
+=====================================================================================
+Оператор CASE
+-- коммент кто сделал запрос
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	Total,
+    CASE
+	WHEN TOTAL < 2.00 THEN 'Baseline Purchase'
+	WHEN TOTAL BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+	WHEN TOTAL BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+	ELSE 'Top Performers'
+	END AS PurchaseType
+	
+FROM
+	invoices
+	WHERE PurchaseType = 'Top Performers'
+ORDER BY
+	BillingCity
+	--PurchaseType
+========================================================================================
+Работа с несколькими таблицами
+
