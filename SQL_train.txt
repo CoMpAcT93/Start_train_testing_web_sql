@@ -183,4 +183,155 @@ ORDER BY
 	--PurchaseType
 ========================================================================================
 Работа с несколькими таблицами
+-- коммент кто сделал запрос
+SELECT
+	c.LastName,
+	c.FirstName,
+	i.InvoiceId,
+	i.CustomerId,
+	i.InvoiceDate,
+	i.Total
+
+FROM
+	invoices AS i
+INNER JOIN
+	customers AS c
+ON 
+	i.CustomerId = c.CustomerId
+ORDER BY
+	c.LastName
+===========================================================================================
+SELECT
+	t.TrackId,
+	t.Composer,
+	t.Name,
+	al.AlbumId,
+	al.Title
+	
+FROM
+	tracks AS t
+
+WHERE Composer NULL
+LEFT OUTER JOIN
+	albums AS al
+ON 
+	t.AlbumId = al.AlbumId
+================================================================================
+Подсчет в таблицах
+SELECT
+	COUNT(LastName) AS [NameCount]
+FROM
+	customers
+WHERE 
+	LastName LIKE 'B%'
+==========================================================================
+Конкатенация строк
+SELECT
+	FirstName || ' ' || LastName,
+	Address
+FROM
+	customers
+WHERE
+	Country = 'USA'
+множественная конкатенация
+SELECT
+	FirstName || ' ' || LastName || ' ' || Address || ', ' || City || ', ' || State || ' ' || PostalCode AS [MailingAddress]
+FROM
+	customers
+WHERE
+	Country = 'USA'
+===========================================================================
+Длина строки 
+SELECT
+	PostalCode,
+	LENGTH(PostalCode) AS [Postal Code Length]
+	
+FROM 
+	customers
+WHERE 
+	Country = "USA"
+==========================================================================
+Вычисление даты рождения и возраст
+SELECT
+	LastName,
+	FirstName,
+	STRFTIME('%Y-%m-%d', BirthDate) AS [Birthday No Timecode],
+	STRFTIME('%Y-%m-%d', 'now') - STRFTIME('%Y-%m-%d', BirthDate) AS [Age]
+FROM
+	employees
+ORDER BY
+	Age
+==============================================================================
+Практическая работа
+SELECT
+	LastName,
+	FirstName,
+	--STRFTIME('%Y-%m-%d', BirthDate) AS [Birthday No Timecode],
+	STRFTIME('%Y-%m-%d', 'now') - STRFTIME('%Y-%m-%d', BirthDate) AS [Age],
+	STRFTIME('%m', BirthDate) AS [BirthdayMonth],
+	STRFTIME('%d', BirthDate) AS [Birthday],
+	STRFTIME('%Y-%m-%d', HireDate) AS [HireDate],
+	STRFTIME('%Y-%m-%d', 'now') - STRFTIME('%Y-%m-%d', HireDate) AS [YearsWork]
+FROM
+	employees
+ORDER BY
+	Age
+===============================================================================
+Округление
+SELECT
+	AVG(Total) AS [Average Sales],
+	ROUND(AVG(Total),2) AS [Rounded Average Sales]
+FROM
+	invoices
+=================================================================================
+Агрегирование
+SELECT
+	SUM(Total) AS TotalSales,
+	AVG(Total) AS AverageSales,
+	MAX(Total) AS MaximumSale,
+	MIN(Total) AS MinSale,
+	COUNT(*) AS SalesCount
+FROM
+	invoices
+====================================================================================
+GROUP BY - агрегаты групп
+SELECT
+	BillingCity,
+	AVG(Total)
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity
+===================================================================================
+SELECT
+	BillingCity,
+	ROUND(AVG(Total),2) AS AVG
+FROM
+	invoices
+WHERE
+	BillingCity LIKE 'B%'
+GROUP BY
+	BillingCity
+HAVING
+	AVG(Total) > 5
+ORDER BY
+	BillingCity
+======================================================================================
+Подзапрос в SELECT
+-- начальный комментарий
+SELECT
+	BillingCity,
+	AVG(Total) AS [City Average],
+(SELECT avg(total) from invoices) AS [Global Average]
+FROM
+	invoices
+GROUP BY
+	BillingCity
+ORDER BY
+	BillingCity
+=====================================================================================
+
+
 
